@@ -63,9 +63,9 @@ Goals
 * **Module:** Demonstrate to create a module using a Module pattern. Import,
   export, encapsulation.
 
-* **Extendable:** Create a basic interface, not just apply but extend the module.
+* **Extendable:** Create a basic interface, possible to extend the module.
 
-* **Promise pattern:** Practicing the usage of Promise pattern while accessing a
+* **Promise pattern:** Practice the usage of Promise pattern while accessing a
   time consuming backend resources.
 
 * **Frontend applicaion:** Suit a frontend application to a predefined backend API.
