@@ -3,7 +3,7 @@ Admin module learning project
 
 Description
 -----------
-This is an output of a learning project by making an extensible frontend
+This is an output of a learning project by making an extendable frontend
 application for a predefined API. Learning project, not able to use in production.
 
 The predefined backend API is a simple file server in Node.js from
