@@ -3,24 +3,24 @@ Admin module learning project
 
 Description
 -----------
-This is an output of a learning project by making an extendable frontend
-application for a predefined API. Learning project, not able to use in production.
+This is a result of a learning project creating an extendable frontend
+application for a predefined API. Learning project, not for production.
 
 The predefined backend API is a simple file server in Node.js from
 [Eloquent Javascript, Chapter 20](http://eloquentjavascript.net/20_node.html#h_LvXChBt2KP).
-You can read the details, how it is constructed on the link above and what is the
-specification is it.
+You can read the details, how it is constructed on the link above and what the
+specifications are.
 
-The frontend application is a simple File Manager interface which able to open a file
-from a list of available files on the backend, able to save it, delete it or create
+The frontend application is a simple File Manager interface which can open a file
+from a list of available files on the backend, can save it, delete it or create
 a new one.
 
-The client application also demonstrate how can be extensible this application by
-plugins, adding a feature, "Add image by URL" button from a separate JS.
+The client application also demonstrates how this application can be extended by
+plugins, features. "Add image by URL" button loads from a separate JS.
 
 The server subdirectory contains the file server, the client subdirectory contains
 a directory, which can be provided by the fileserver on localhost. There are some
-regular files on there, but the admin.html contains the application to able to reach
+regular files on there, but the admin.html contains the web-application which can reach
 the File Manager application.
 
 Check the documentation of the admin.md of the admin.js file
@@ -51,8 +51,11 @@ How to make it work?
    be the root directory of the fileserver. The server will be listen to port 8000.
    `$ node ../server/file_server.js`
 
+// If you add the runnable entry into package json, it can be run with 
+   `node .`
+
 4. Visit [http://localhost:8000/admin.html](http://localhost:8000/admin.html)
-  from your browser.
+  in your browser.
 
 5. Open the developer console in your browser, to see the javascript log messages
   ( CTRL + SHIFT + I ) in Chrome for example, this is a part of the user interface :),
@@ -63,7 +66,7 @@ Goals
 * **Module:** Demonstrate to create a module using a Module pattern. Import,
   export, encapsulation.
 
-* **Extendable:** Create a basic interface, possible to extend the module.
+* **Extendable:** Create a basic interface, with the ability to extend the module.
 
 * **Promise pattern:** Practice the usage of Promise pattern while accessing a
   time consuming backend resources.
@@ -71,7 +74,7 @@ Goals
 * **Frontend applicaion:** Suit a frontend application to a predefined backend API.
 
 * **Documentation:** Create a developer documentation for this project to practice
-  documentation writing. (Overdocumented considering its learning project.)
+  documentation. (Overdocumented considering that it's a practicing project.)
 
 Restrictions
 ------------
@@ -80,24 +83,24 @@ Restrictions
   to recognize, so editing those directories where subdirectories are present is
   not really supported.
 
-* Really basic UX. The interface not alert the user if there are unsaved changes and
-  performs an other action which destroy these changes. Delete or overwrites the file
+* Really basic UX. The interface does not alert the user if there are unsaved changes and
+  performs an other action which destroys these changes. Deletes or overwrites the file
   without any warning.
 
-* No real Application level error handling, the log messages from the console gives
+* No real Application level error handling, the log messages from the console give
   some information to the user.
 
-* The same as with the status messages like 'file saved...' etc. Only the console
-  gives feedback for the user of their actions.
+* The same with the status messages like 'file saved...' etc. Only the console
+  gives feedback for the user about their actions.
 
-* The interface is not nice. Only the basic HTML elements used on its own.
+* The interface is not nice. Only basic HTML elements used.
 
-* Not able to select which controls can be viewed and which order, all the registered
-  controls will be shown in the order of the registration.
+* Not able to select which controls can be viewed and in what order, all the registered
+  controls will be shown in the order of registration.
 
 * Lack of security considerations.
 
 * Better module package handling can be useful like CommonJS or AMD.
 
-* The extendable control interface using the simple DOM API, so it is quite dependent
-  of the actual DOM implmentation of the other controls.
+* The extendable control interface is using the simple DOM API, so it is quite dependent
+  of the actual DOM implmentation of the other controls. // this does not make much sense.
