@@ -35,7 +35,7 @@ methods.GET = function(path, respond) {
         if (error)
           respond(500, error.toString());
         else
-          respond(200, files.join("\n"));
+          respond(200, files.join("\n")); // json a barátunk
       });
     else
       respond(200, fs.createReadStream(path),

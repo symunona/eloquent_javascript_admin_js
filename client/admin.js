@@ -46,7 +46,7 @@
  * @module Admin
  */
 var Admin = (function(Promise) {
-  'use strict'
+  'use strict';
 
   /**
    * Variable will be exported at the end of this module publicly.
@@ -95,7 +95,7 @@ var Admin = (function(Promise) {
    * @private
    * @type  {Object}
    */
-  var registeredControls = Object.create(null);
+  var registeredControls = {}; // Object.create(null);
 
   /**
    * Registered internal controls
@@ -111,7 +111,7 @@ var Admin = (function(Promise) {
    * @kind control element consturctor function
    */
   registerControl('editorWindow', function(self) {
-    return self.createDomElement('textarea', {cols:100, rows:20, id: 'editor'});
+    return self.createDomElement('textarea', {cols:100, rows:20, id: 'editor'});  // ezt a self patternt hol lattad?
   });
 
   /**
@@ -119,13 +119,16 @@ var Admin = (function(Promise) {
    * @name saveButton
    * @kind control element consturctor function
    */
-  registerControl('saveButton', function(self) {
+  registerControl('saveButton', function(self) {  
+    // you can save this, and insted call the function with call(whatever_you_want_as_self, parameter1, ...) 
+    // then you can refer to it as this within the function
     var saveButton = self.createDomElement('button', null, 'Save');
     saveButton.addEventListener('click', function(event) {
+      // here though you would need that self, but it's usually saved at the parent as var self = this;
       if(!self.getControl('fileList').value) {
         console.log('nothing to save here...');
         return;
-      };
+      }
       self.fileManager.saveOrCreateFile(self.getControl('fileList').value, self.getControl('editorWindow').value);
     });
     return saveButton;
@@ -149,7 +152,7 @@ var Admin = (function(Promise) {
     var fileList = self.createDomElement('select', {size: 10});
     fileList.addEventListener('change', function(event) {
       self.fileManager.loadContent(event.target.value)
-        .then(function(result) {self.getControl('editorWindow').value = result})
+        .then(function(result) {self.getControl('editorWindow').value = result;})
         .catch(function(error) {console.error(error); } );
     });
     self.fileManager.udpateFileList()
@@ -195,13 +198,13 @@ var Admin = (function(Promise) {
     deleteButton.addEventListener('click', function(event) {
       if(self.getControl('fileList').value) {
         self.fileManager.deleteFile(self.getControl('fileList').value)
-          .catch( function(error) { console.error('Deleting not successful: ', error) })
+          .catch( function(error) { console.error('Deleting not successful: ', error); })
           .then(function (result) { return self.fileManager.udpateFileList(); })
           .then(function(result) {
             self.getControl('editorWindow').value = null;
-            self.updateChildren(self.getControl('fileList'), result)
+            self.updateChildren(self.getControl('fileList'), result);
           })
-          .catch( function(error) { console.error('File list could not updated: ', error) });
+          .catch( function(error) { console.error('File list could not updated: ', error); });
       }
     });
     return deleteButton;
@@ -288,7 +291,7 @@ var Admin = (function(Promise) {
         parent.appendChild(self.createDomElement('option', null, element));
       });
     }
-  }
+  };
 
   /**
    * Helper function to create a DOM element tag tagName. In a propertiesObject

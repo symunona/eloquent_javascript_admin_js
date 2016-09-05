@@ -56,6 +56,8 @@ How to make it work?
 
 4. Visit [http://localhost:8000/admin.html](http://localhost:8000/admin.html)
   in your browser.
+  
+  nekem ez not found
 
 5. Open the developer console in your browser, to see the javascript log messages
   ( CTRL + SHIFT + I ) in Chrome for example, this is a part of the user interface :),
